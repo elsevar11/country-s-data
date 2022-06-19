@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css">
+</head>   
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="./index.html" class="nav-logo">Elsever</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="clock.php" class="nav-link">country'clock</a>
+                </li>
+                <li class="nav-item">
+                    <a href="countdown.html" class="nav-link">coundown</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sa.php" class="nav-link">weather</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+</header>
+<section class="hello">
+    <div class="container">
+  
+        <h2>Countdown<small>You can select you want time </small></h2>
+        
+        <form>
+          
+          <div class="group">      
+            <input type="text" id="month" required>
+            <span class="highlight"></span>
+            <span class="bar1"></span>
+            <label>Month</label>
+          </div>
+            
+          <div class="group">      
+            <input type="text" id="day" required>
+            <span class="highlight"></span>
+            <span class="bar1"></span>
+            <label>Day</label>
+          </div>
+          <div class="group">      
+            <input type="text" id="year" required>
+            <span class="highlight"></span>
+            <span class="bar1"></span>
+            <label>Year</label>
+          </div>
+          <div class="group">      
+            <input type="text" id="hour" required>
+            <span class="highlight"></span>
+            <span class="bar1"></span>
+            <label>Hour</label>
+          </div>
+            <div class="group">      
+                <input type="text" id="min" required>
+                <span class="highlight"></span>
+                <span class="bar1"></span>
+                <label>Minute</label>
+            </div>
+                    
+          
+          <div class="group">      
+           
+            <button type="button" value="Submit" onclick="settimer();" class="fill">Submit</button>
+          </div>
+         
+        </form>
+            
+        
+        
+      </div>
+      <div class="timer">
+        
+        <div class="pakets" >
+        <div class="paket" id="timer_value1"></div>
+        <div class="paket" id="timer_value2"></div>
+        <div class="paket" id="timer_value3"></div>
+        <div class="paket" id="timer_value4"></div>
+    </div>
+      </div>
+    </section>
+      <footer id="contact">
+        <div class="container-footer">
+        <div class="row">
+          <div class="col">
+            <h5>
+            Company
+            </h5>
+             <ul>
+               <li><a href="">About us</a></li>
+               <li><a href="">Our services</a></li>
+               <li><a href="">Privacy</a></li>
+               <li><a href="">Contact</a></li>
+              </ul>
+          </div>
+          <div class="col">
+            <h5>Quick links</h5>
+            <ul>
+            <li><a href="/gallery/index.html">Home</a></li>
+            <li><a href="/gallery/photos/design.html">Photo</a></li>
+            <li><a href="#designs">Designs</a></li>
+            <li><a href="contact">Contact</a></li>
+          </ul>
+          </div>
+          <div class="col">
+            <h5>
+           Social media
+            </h5>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-discord"></i></a>
+              <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+          </div>
+          <div class="col">
+            <h5>
+              Contact us 
+            </h5>
+            <p> 
+              Call :  <span>+9940702334457</span>
+            </p>
+           
+            <p>
+              Email : <span>
+                qasimovelsever11@gmail.com
+              </span>
+            </p>
+            <p>
+              Skype : <span>Elsever Qasimov</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      </footer>
+<script>
+    var timer;
+function settimer()
+{
+ clearInterval(timer);
+
+ var timer_month=document.getElementById("month").value;
+ var timer_day=document.getElementById("day").value;
+ var timer_year=document.getElementById("year").value;
+ var timer_hour=document.getElementById("hour").value;
+ if(timer_hour=="")timer_hour=0;
+ var timer_min=document.getElementById("min").value;
+ if(timer_min=="")timer_min=0;
+
+ var timer_date=timer_month+"/"+timer_day+"/"+timer_year+" "+timer_hour+":"+timer_min;
+ var end = new Date(timer_date); // Arrange values in Date Time Format
+ var now = new Date(); // Get Current date time
+ var second = 1000; // Total Millisecond In One Sec
+ var minute = second * 60; // Total Sec In One Min
+ var hour = minute * 60; // Total Min In One Hour
+ var day = hour * 24; // Total Hour In One Day
+
+ function showtimer() {
+  var now = new Date();
+  var remain = end - now; // Get The Difference Between Current and entered date time
+  if(remain < 0) 
+  {
+   clearInterval(timer);
+   document.getElementById("timer_value1").innerHTML = 'Reached!';
+   return;
+  }
+  var days = Math.floor(remain / day); // Get Remaining Days
+  var hours = Math.floor((remain % day) / hour); // Get Remaining Hours
+  var minutes = Math.floor((remain % hour) / minute); // Get Remaining Min
+  var seconds = Math.floor((remain % minute) / second); // Get Remaining Sec
+ 
+  document.getElementById("timer_value1").innerHTML = days + 'Days ';
+  document.getElementById("timer_value2").innerHTML = hours + 'Hrs ';
+  document.getElementById("timer_value3").innerHTML = minutes + 'Mins ';
+  document.getElementById("timer_value4").innerHTML = seconds + 'Secs';
+ }
+ timer = setInterval(showtimer, 1000); // Display Timer In Every 1 Sec
+ document.querySelector(".timer").style.display="flex"
+}
+</script>
+</body>
+</html>

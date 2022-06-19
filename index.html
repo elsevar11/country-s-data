@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salam</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap">
+
+
+    <style>
+   
+      
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+   
+html {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+.header{
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 17px;
+    font-weight: 400;
+    color: #475569;
+}
+
+.nav-link:hover{
+    color: #482ff7;
+}
+
+.nav-logo {
+    font-size: 30px;
+    font-weight: 500;
+    color: #482ff7;
+}
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+}
+#contact {
+  background: #24262b;
+  padding: 70px 0;
+}
+
+#contact .container-footer {
+  max-width: 1170px;
+  margin: auto;
+}
+
+#contact .container-footer .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#contact .container-footer .row .col {
+  width: 25%;
+  padding: 0 15px;
+}
+
+#contact .container-footer .row .col h5 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 35px;
+  text-transform: capitalize;
+  font-weight: 500;
+  position: relative;
+}
+
+#contact .container-footer .row .col ul {
+  list-style-type: none;
+}
+
+#contact .container-footer .row .col ul li a {
+  text-decoration: none;
+  color: #bbbbbb;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 300;
+  display: block;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#contact .container-footer .row .col ul li a:hover {
+  color: #fff;
+  padding-left: 10px;
+}
+
+#contact .container-footer .row .col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+#contact .container-footer .row .col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#contact .container-footer .row .col .social-links a:hover {
+  color: #24262b;
+  background-color: #fff;
+}
+
+#contact .container-footer .row .col p {
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 10px 10px 0;
+}
+
+#contact .container-footer .row .col p span {
+  font-size: 13px;
+  color: #bbbbbb;
+}
+
+#contact .container-footer .row .col h5::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  width: 50px;
+}
+
+@media (max-width: 500px) {
+  #contact .container-footer .row .col {
+    width: 100%;
+    padding: 15px 15px;
+  }
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+ * {
+	 box-sizing: border-box;
+	 font-weight: normal;
+}
+ .body {
+	 color: #555;
+	 background: #FFF;
+	 text-align: center;
+	 font-family: cursive;
+	 padding: 1em;
+}
+ h1 {
+	 font-size: 2.2em;
+}
+ .flip {
+	 position: relative;
+}
+ .flip > .front, .flip > .back {
+	 display: block;
+	 transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	 transition-duration: 2s;
+	 transition-property: transform, opacity;
+}
+ .flip > .front {
+	 transform: rotateY(0deg);
+     
+}
+ .flip > .back {
+	 position: absolute;
+	 opacity: 0;
+	 top: 0px;
+	 left: 0px;
+	 width: 100%;
+	 height: 100%;
+	 transform: rotateY(-180deg);
+}
+ .flip:hover > .front {
+	 transform: rotateY(180deg);
+}
+ .flip:hover > .back {
+	 opacity: 1;
+	 transform: rotateY(0deg);
+}
+ .flip.flip-vertical > .back {
+	 transform: rotateX(-180deg);
+}
+ .flip.flip-vertical:hover > .front {
+	 transform: rotateX(180deg);
+}
+ .flip.flip-vertical:hover > .back {
+	 transform: rotateX(0deg);
+}
+ .flip {
+	 position: relative;
+	 display: inline-block;
+	 margin-right: 2px;
+	 margin-bottom: 1em;
+	 width: 400px;
+    cursor: pointer;
+}
+.flip .text-shadow{
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    font-size: 26px;
+}
+ .flip > .front, .flip > .back {
+	 display: block;
+	 color: white;
+	 width: inherit;
+	 background-size: cover !important;
+	 background-position: center !important;
+	 height: 220px;
+	 padding: 1em 2em;
+	 background: #313131;
+	 border-radius: 10px;
+}
+ .flip > .front p, .flip > .back p {
+	 font-size: 0.9125rem;
+	 line-height: 160%;
+	 color: #999;
+}
+ .text-shadow {
+	 text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+    color: black;
+    }
+ .track{
+     color: #Fff !important;
+ }
+ .back a{
+     color: #fff;
+     text-decoration: none;
+     padding: 5px 7px;
+     border: 1px solid #fff;
+     font-size: 20px;
+     border-radius: 30px;
+     margin-top: 50px;
+ }
+ .back p{
+     margin-bottom: 20px;
+ }
+.welcome h1{
+    text-align: center;
+    font-size: 50px;
+    text-transform: capitalize;
+}
+.welcome p{
+    text-align: center;
+    text-transform: capitalize;
+    font-family: cursive;
+
+}
+.welcome{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+    </style>
+  </head>
+  <body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">Elsever</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="clock.php" class="nav-link">country'clock</a>
+                </li>
+                <li class="nav-item">
+                    <a href="countdown.html" class="nav-link">coundown</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">weather</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+</header>
+
+
+<section class="welcome">
+    <h1>welcome our website</h1>
+    <p>our website you choose you want</p>
+</section>
+<section class="body">
+   
+    <div class="flip flip-vertical">
+        <div class="front" style="background-image: url(https://ak.picdn.net/shutterstock/videos/327190/thumb/1.jpg)">
+           <h1 class="text-shadow">Clocks</hi>
+        </div>
+        <div class="back">
+           <h2>clock</h2>
+           <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+            <a href="clock.php">clock</a>
+        </div>
+    </div>
+    <div class="flip flip-vertical">
+        <div class="front" style="background-image: url(https://talkstar-assets.s3.amazonaws.com/production/playlists/playlist_763/48cd6287-f697-4fbe-aaaf-e7fe26fb9f4e/03_Countdown_TED.com_Playlist-art_2000x2000.jpg)">
+           <h1 class="text-shadow track">Countdown</hi>
+        </div>
+        <div class="back">
+           <h2>Countdown</h2>
+           <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+            <a href="countdown.html">Countdown</a>
+        </div>
+    </div>
+    <div class="flip flip-vertical">
+        <div class="front" style="background-image: url(https://images.ctfassets.net/hrltx12pl8hq/6TIZLa1AKeBel0yVO7ReIn/1fc0e2fd9fcc6d66b3cc733aa2547e11/weather-images.jpg?fit=fill&w=800&h=300)">
+           <h1 class="text-shadow track">Weather</hi>
+        </div>
+        <div class="back">
+           <h2>Weather</h2>
+           <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+            <a href="sa.php">Weather</a>
+        </div>
+    </div>
+</section>
+    
+    <footer id="contact">
+        <div class="container-footer">
+        <div class="row">
+          <div class="col">
+            <h5>
+            Company
+            </h5>
+             <ul>
+               <li><a href="">About us</a></li>
+               <li><a href="">Our services</a></li>
+               <li><a href="">Privacy</a></li>
+               <li><a href="">Contact</a></li>
+              </ul>
+          </div>
+          <div class="col">
+            <h5>Quick links</h5>
+            <ul>
+            <li><a href="/gallery/index.html">Home</a></li>
+            <li><a href="/gallery/photos/design.html">Photo</a></li>
+            <li><a href="#designs">Designs</a></li>
+            <li><a href="contact">Contact</a></li>
+          </ul>
+          </div>
+          <div class="col">
+            <h5>
+           Social media
+            </h5>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-discord"></i></a>
+              <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+          </div>
+          <div class="col">
+            <h5>
+              Contact us 
+            </h5>
+            <p> 
+              Call :  <span>+9940702334457</span>
+            </p>
+           
+            <p>
+              Email : <span>
+                qasimovelsever11@gmail.com
+              </span>
+            </p>
+            <p>
+              Skype : <span>Elsever Qasimov</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      </footer>
+    <script>
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+    </script>
+  </body>
+</html>
